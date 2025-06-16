@@ -5,12 +5,12 @@ MiniBit é um sistema distribuído de compartilhamento de arquivos entre múltip
 
 ## Funcionalidades Principais
 
-✅ Divisão do arquivo em blocos  
-✅ Compartilhamento P2P entre múltiplos peers  
-✅ Algoritmo **Rarest First** para priorizar blocos menos comuns  
-✅ Estratégia **Tit-for-Tat (simplificada)** para decidir quem pode receber blocos  
-✅ Tracker central para descoberta de peers  
-✅ Sistema de logs para rastrear o progresso
+- Divisão do arquivo em blocos  
+- Compartilhamento P2P entre múltiplos peers  
+- Algoritmo **Rarest First** para priorizar blocos menos comuns  
+- Estratégia **Tit-for-Tat (simplificada)** para decidir quem pode receber blocos  
+- Tracker central para descoberta de peers  
+- Sistema de logs para rastrear o progresso
 
 ## Requisitos
 
@@ -20,7 +20,7 @@ MiniBit é um sistema distribuído de compartilhamento de arquivos entre múltip
   pip install -r requirements.txt
   ```
 
-## 🗂️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 MiniBit/
@@ -114,7 +114,7 @@ Os logs mostram:
 
 Este projeto demonstra, na prática, conceitos de redes peer-to-peer, coordenação descentralizada e algoritmos de compartilhamento. Estratégias como *Rarest First* e *Tit-for-Tat* garantem eficiência na distribuição mesmo em ambientes simulados.
 
-## 🛠️ Melhorias Futuras
+## Melhorias Futuras
 
 - Persistência do estado
 - Testes em múltiplas máquinas (rede real)
