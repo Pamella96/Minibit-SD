@@ -47,6 +47,9 @@ start_tracker.bat
 ```bash
 python peer.py peer_1 5001
 python peer.py peer_2 5002
+python peer.py peer_3 5003
+python peer.py peer_4 5004
+python peer.py peer_5 5005
 ```
 Ou use:
 ```bat
