@@ -32,6 +32,13 @@ class Peer:
             self.log.addHandler(manipulador)
         self.log.setLevel(logging.INFO)
 
+        # Também salvar os logs em arquivo
+        arquivo_log = logging.FileHandler(f'{self.id_peer}.log', mode='a', encoding='utf-8')
+        arquivo_log.setFormatter(formatador)
+        self.log.addHandler(arquivo_log)
+
+        self.log.setLevel(logging.INFO)
+
         # Inicia um servidor Flask para responder a requisições de outros peers.
         self.app = Flask(__name__)
         self.configurar_rotas()
