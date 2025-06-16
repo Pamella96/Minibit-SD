@@ -121,7 +121,3 @@ Este projeto demonstra, na prática, conceitos de redes peer-to-peer, coordenaç
 - Criptografia das mensagens
 - Suporte a múltiplos arquivos
 
-
-## 📄 Licença
-
-Este projeto está licenciado sob os termos da licença UERJ.
