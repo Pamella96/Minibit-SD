@@ -92,6 +92,15 @@ Os logs mostram:
 - Requisições rejeitadas (choked)
 - Início do modo seeding
 
+## 🔄 Exemplo de Fluxo de Comunicação
+
+1. Peer A se registra no tracker e recebe blocos 0–9.
+2. Peer B se registra e recebe blocos 10–19.
+3. Peer A consulta `/get_peers` e descobre o Peer B.
+4. Peer A usa `/get_block_info` para saber que o bloco 12 está com o Peer B.
+5. Peer A faz uma requisição direta para `/request_block/12` no Peer B.
+6. Peer B verifica se A está desbloqueado (Tit-for-Tat) e, se sim, envia o bloco.
+
 ## 🧪 Testes Sugeridos
 
 - Teste com 3 a 10 peers
