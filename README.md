@@ -3,7 +3,7 @@
 
 MiniBit é um sistema distribuído de compartilhamento de arquivos entre múltiplos peers. Ele simula um ambiente P2P (peer-to-peer), onde os peers compartilham blocos de um arquivo de forma cooperativa, utilizando estratégias reais como **Rarest First** e uma versão simplificada de **Tit-for-Tat (Olho por Olho)**.
 
-## 📌 Funcionalidades Principais
+## Funcionalidades Principais
 
 ✅ Divisão do arquivo em blocos  
 ✅ Compartilhamento P2P entre múltiplos peers  
@@ -12,7 +12,7 @@ MiniBit é um sistema distribuído de compartilhamento de arquivos entre múltip
 ✅ Tracker central para descoberta de peers  
 ✅ Sistema de logs para rastrear o progresso
 
-## ⚙️ Requisitos
+## Requisitos
 
 - Python 3.8+
 - Dependências:  
@@ -32,7 +32,7 @@ MiniBit/
 └── README.md            # Este arquivo
 ```
 
-## 🚀 Como Executar
+## Como Executar
 
 ### 1. Iniciar o Tracker
 ```bash
@@ -56,28 +56,28 @@ Ou use:
 start_peers.bat
 ```
 
-## 🔄 Como Funciona
+## Como Funciona
 
-### 📁 Divisão em Blocos
+### Divisão em Blocos
 O arquivo é virtualmente dividido em 50 blocos (`block_0`, `block_1`, ..., `block_49`).
 
-### 📡 Registro no Tracker
+### Registro no Tracker
 - Registro via `/register`
 - Recebimento de blocos iniciais
 - Descoberta de outros peers via `/get_peers`
 
-### 📉 Estratégia Rarest First
+### Estratégia Rarest First
 O peer prioriza o download dos blocos menos comuns, consultando o endpoint `/get_block_info` do tracker.
 
-### 🔁 Tit-for-Tat Simplificado (Olho por Olho)
+### Tit-for-Tat Simplificado (Olho por Olho)
 - 4 peers desbloqueados com mais blocos raros
 - 1 peer desbloqueado otimista a cada 10s
 - Apenas peers desbloqueados podem receber blocos
 
-### 🧩 Encerramento
+### Encerramento
 Peers que completam o arquivo entram em **modo seeder** e continuam compartilhando blocos.
 
-## 💬 Protocolo de Comunicação
+## Protocolo de Comunicação
 
 | Endpoint               | Método | Descrição                                            |
 |------------------------|--------|------------------------------------------------------|
@@ -87,7 +87,7 @@ Peers que completam o arquivo entram em **modo seeder** e continuam compartilhan
 | `/update_blocks`       | POST   | Atualiza os blocos que o peer possui                |
 | `/request_block/<id>`  | GET    | Solicita bloco diretamente a outro peer             |
 
-## 📊 Logs e Monitoramento
+## Logs e Monitoramento
 
 Os logs mostram:
 - Blocos recebidos
@@ -95,7 +95,7 @@ Os logs mostram:
 - Requisições rejeitadas (choked)
 - Início do modo seeding
 
-## 🔄 Exemplo de Fluxo de Comunicação
+## Exemplo de Fluxo de Comunicação
 
 1. Peer A se registra no tracker e recebe blocos 0–9.
 2. Peer B se registra e recebe blocos 10–19.
@@ -104,13 +104,13 @@ Os logs mostram:
 5. Peer A faz uma requisição direta para `/request_block/12` no Peer B.
 6. Peer B verifica se A está desbloqueado (Tit-for-Tat) e, se sim, envia o bloco.
 
-## 🧪 Testes Sugeridos
+## Testes Sugeridos
 
 - Teste com 3 a 10 peers
 - Medir tempo de download total
 - Análise dos logs: número de mensagens e blocos trocados
 
-## 🧠 Reflexão
+## Reflexão
 
 Este projeto demonstra, na prática, conceitos de redes peer-to-peer, coordenação descentralizada e algoritmos de compartilhamento. Estratégias como *Rarest First* e *Tit-for-Tat* garantem eficiência na distribuição mesmo em ambientes simulados.
 
